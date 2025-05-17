@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REset - Reinicie seu impacto ambiental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary-green: #2e8b57;
+            --dark-green: #1e5631;
+            --light-green: #a4de9e;
+            --accent-green: #76ba1b;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8faf7;
+            color: #333;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.9) 0%, rgba(30, 86, 49, 0.95) 100%);
+        }
+        
+        .leaf-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a4de9e' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.2);
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-green);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+        }
+        
+        .leaf-decoration {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-leaf text-3xl text-green-600"></i>
+                <span class="text-2xl font-bold text-green-800 font-['Poppins']">RE<span class="text-green-600">set</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-green-800 hover:text-green-600 font-medium">Início</a>
+                <a href="#" class="text-green-800 hover:text-green-600 font-medium">Soluções</a>
+                <a href="#" class="text-green-800 hover:text-green-600 font-medium">Impacto</a>
+                <a href="#" class="text-green-800 hover:text-green-600 font-medium">Sobre Nós</a>
+                <a href="#" class="text-green-800 hover:text-green-600 font-medium">Contato</a>
+            </div>
+            <button class="md:hidden text-green-800">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white relative overflow-hidden">
+        <div class="leaf-decoration top-0 left-0">
+            <i class="fas fa-leaf text-6xl"></i>
+        </div>
+        <div class="leaf-decoration bottom-0 right-0">
+            <i class="fas fa-leaf text-6xl"></i>
+        </div>
+        <div class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 relative z-10">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-['Poppins']">Reinicie seu <span class="text-green-200">impacto ambiental</span></h1>
+                <p class="text-xl md:text-2xl mb-8 text-green-100">Soluções sustentáveis para um futuro mais verde. Junte-se à nossa missão de regeneração do planeta.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="btn-primary px-8 py-3 rounded-full font-bold text-white shadow-lg">Comece Agora</button>
+                    <button class="bg-white text-green-800 px-8 py-3 rounded-full font-bold shadow-lg hover:bg-green-100 transition">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative z-10 flex justify-center">
+                <div class="bg-white p-4 rounded-2xl shadow-2xl floating">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Natureza regenerada" class="w-full max-w-md rounded-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-green-50 leaf-pattern">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl font-bold text-green-700 mb-2">12K+</div>
+                    <div class="text-green-600">Árvores Plantadas</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl font-bold text-green-700 mb-2">350+</div>
+                    <div class="text-green-600">Projetos Concluídos</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl font-bold text-green-700 mb-2">85%</div>
+                    <div class="text-green-600">Redução de Resíduos</div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl font-bold text-green-700 mb-2">24/7</div>
+                    <div class="text-green-600">Suporte Especializado</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4 font-['Poppins']">Nossas <span class="text-green-600">Soluções</span></h2>
+                <p class="max-w-2xl mx-auto text-lg text-green-700">Oferecemos diversas soluções para ajudar sua empresa ou comunidade a reduzir seu impacto ambiental.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-green-50 rounded-xl p-8 card-hover relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 text-green-200 text-7xl opacity-20">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <div class="mb-6 text-green-600 text-4xl">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-800 mb-4">Gestão de Resíduos</h3>
+                    <p class="text-green-700 mb-6">Soluções inteligentes para redução, reutilização e reciclagem de materiais, minimizando o impacto ambiental.</p>
+                    <a href="#" class="text-green-600 font-medium hover:text-green-800 flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-green-50 rounded-xl p-8 card-hover relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 text-green-200 text-7xl opacity-20">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <div class="mb-6 text-green-600 text-4xl">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-800 mb-4">Energia Renovável</h3>
+                    <p class="text-green-700 mb-6">Implementação de sistemas de energia limpa para reduzir emissões e custos operacionais.</p>
+                    <a href="#" class="text-green-600 font-medium hover:text-green-800 flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-green-50 rounded-xl p-8 card-hover relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 text-green-200 text-7xl opacity-20">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="mb-6 text-green-600 text-4xl">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-800 mb-4">Replantio Florestal</h3>
+                    <p class="text-green-700 mb-6">Programas de reflorestamento e conservação para restaurar ecossistemas e biodiversidade.</p>
+                    <a href="#" class="text-green-600 font-medium hover:text-green-800 flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-green-800 text-white relative overflow-hidden">
+        <div class="leaf-decoration top-10 left-10">
+            <i class="fas fa-leaf text-6xl"></i>
+        </div>
+        <div class="leaf-decoration bottom-10 right-10">
+            <i class="fas fa-leaf text-6xl"></i>
+        </div>
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 font-['Poppins']">Pronto para <span class="text-green-200">reiniciar</span> seu impacto?</h2>
+            <p class="max-w-2xl mx-auto text-xl mb-10 text-green-100">Junte-se a milhares de empresas e indivíduos que já estão fazendo a diferença pelo nosso planeta.</p>
+            <button class="btn-primary px-10 py-4 rounded-full font-bold text-white shadow-lg text-lg">Fale com nossos especialistas</button>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4 font-['Poppins']">O que dizem <span class="text-green-600">sobre nós</span></h2>
+                <p class="max-w-2xl mx-auto text-lg text-green-700">Depoimentos de clientes e parceiros que já transformaram seus negócios com nossas soluções.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-green-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-800">Ana Souza</h4>
+                            <p class="text-green-600">CEO, EcoSolutions</p>
+                        </div>
+                    </div>
+                    <p class="text-green-700 italic">"A REset transformou completamente nossa gestão de resíduos. Em 6 meses reduzimos nosso impacto ambiental em 60% sem aumentar custos."</p>
+                    <div class="mt-4 text-green-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-green-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-800">Carlos Mendes</h4>
+                            <p class="text-green-600">Diretor, Verde Futuro</p>
+                        </div>
+                    </div>
+                    <p class="text-green-700 italic">"O programa de replantio da REset não só compensou nossa pegada de carbono como criou empregos em comunidades locais. Resultado incrível!"</p>
+                    <div class="mt-4 text-green-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-green-50 p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-200 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-800">Juliana Lima</h4>
+                            <p class="text-green-600">Gerente, NaturaTech</p>
+                        </div>
+                    </div>
+                    <p class="text-green-700 italic">"A migração para energia renovável com a REset foi perfeita. Reduzimos custos em 40% e agora somos 100% sustentáveis. Recomendo a todos!"</p>
+                    <div class="mt-4 text-green-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Logo and info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <i class="fas fa-leaf text-3xl text-green-400"></i>
+                        <span class="text-2xl font-bold text-white font-['Poppins']">RE<span class="text-green-400">set</span></span>
+                    </div>
+                    <p class="mb-4 text-green-200">Transformando o impacto ambiental em oportunidades sustentáveis para um futuro melhor.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-green-200 hover:text-white text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-green-200 hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-green-200 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-green-200 hover:text-white text-xl"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Soluções</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-green-200 hover:text-white">Gestão de Resíduos</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Energia Renovável</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Replantio Florestal</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Consultoria ESG</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Educação Ambiental</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Empresa</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-green-200 hover:text-white">Sobre Nós</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Equipe</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Carreiras</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Parceiros</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contato</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
+                            <span class="text-green-200">Av. Sustentabilidade, 123<br>Eco Parque, SP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-green-400"></i>
+                            <span class="text-green-200">(11) 98765-4321</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-400"></i>
+                            <span class="text-green-200">contato@reset.com.br</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-green-400 mb-4 md:mb-0">© 2023 REset. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-green-400 hover:text-white">Termos de Serviço</a>
+                    <a href="#" class="text-green-400 hover:text-white">Política de Privacidade</a>
+                    <a href="#" class="text-green-400 hover:text-white">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card-hover');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Mobile menu toggle would go here
+        });
+    </script>
+</body>
+</html>
